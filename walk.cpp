@@ -5,6 +5,7 @@ using namespace std;
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <math.h>
 #define dot '.'
 
 
