@@ -228,7 +228,7 @@ int main() {
 	} while ((ch = getchar()) != 'q');
 		
 	system("pause");
-	return 43; // change 2 
+	return 41; // change 1 
 }
 
 
