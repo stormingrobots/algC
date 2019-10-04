@@ -228,5 +228,7 @@ int main() {
 	} while ((ch = getchar()) != 'q');
 		
 	system("pause");
-	return 0;
+	return 50; 
 }
+
+
