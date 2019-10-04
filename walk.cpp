@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctype.h>
 using namespace std;
 #include <ctype.h>
 #include <stdlib.h>
