@@ -1,0 +1,13 @@
+*.o
+*.obj
+*.exe
+*.lib
+*.dll
+*.sln
+*.vcxproj
+*.vcxproj.*
+.vs/
+Debug/
+x64/
+Release/
+*.ini
