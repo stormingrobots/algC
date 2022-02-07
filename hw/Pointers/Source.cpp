@@ -26,14 +26,15 @@ void print2D(int** list, int rows, int cols) {
 	printf("------------------------------\n");
 }
 
-int** create2D(int r, int c) {
+int** create2D(size_t r, size_t c) {
 	int** dp2 = (int**)malloc(sizeof(int*));
 	if (dp2 == NULL) return NULL;
-
+	printf("%llu vs %llu \n", sizeof(unsigned long long), sizeof(dp2));
 	*dp2 = (int*)calloc(r * c, sizeof(int));
 
 	for (int i = 1; i < r; i++) {
-		dp2[i] = (int*)((char*)dp2[i - 1] + sizeof(int) * c);
+		char* p = (char*) dp2[i - 1];
+		dp2[i] = (int*)(  p + sizeof(int)*c);
 	}
 	return (dp2);
 }
@@ -46,20 +47,20 @@ int main() {
 
 	for (int i = 0; i < maxRows; i++) {
 		for (int j = 0; j < maxCols; j++) {
-			list[i][j] = i * j + j;
+			list[i][j] = (i+1) * (j+1);
 		}
 	}
 	print2D((int*)list, maxRows, maxCols);
 	//----------------------------------
 
 	int** dp = create2D(maxRows, maxCols);
-
+	
 	printf("\n\n");
 
 	memcpy(*dp, (int*)list, maxRows * maxCols * sizeof(list[0][0]));
 
-	print2D(*dp, maxRows, maxCols);
-	print2D(dp, maxRows, maxCols);
+//	print2D(*dp, maxRows, maxCols);
+//	print2D(dp, maxRows, maxCols);
 	for (int i = 0; i < maxRows; i++) {
 		printf("%3d: ", i);
 		for (int j = 0; j < maxCols; j++) {
